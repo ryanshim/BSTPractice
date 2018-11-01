@@ -1,5 +1,5 @@
 ### Binary Search Tree Practice Project
-- For students attending 131 SI sessions.
+- For students attending CPSC 131 SI sessions.
 
 * Provided is a very minimal implementation of a binary search tree that has some skeleton functions to be completed.
 
