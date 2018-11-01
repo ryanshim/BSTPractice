@@ -10,29 +10,38 @@ using namespace std;
 int main() {
     int numPassed = 0;
     int numTests = 3;
+
     BinarySearchTree<int> myTree;
+
+    std::cout << "1. TESTING CONSTRUCTOR BinarySearchTree() ";
+    assert(myTree.size() == 0);
+    assert(myTree.root() == nullptr);
+    std::cout << " -->PASSED" << std::endl;
 
     myTree.insertVal(2);
     myTree.insertVal(1);
     myTree.insertVal(3);
-    myTree.inorderPrint(myTree.getRoot());
 
-    std::cout << "TESTING getMinimum() ";
+    std::cout << "2. TESTING getMinimum() ";
     assert(myTree.getMinimum() == 1);
     std::cout << " ---> PASSED" << std::endl;
     numPassed++;
 
-    std::cout << "TESTING getMaximum() ";
+    std::cout << "3. TESTING getMaximum() ";
     assert(myTree.getMaximum() == 3);
     std::cout << " ---> PASSED" << std::endl;
     numPassed++;
 
-    std::cout << "TESTING inorderPrint() ";
-    myTree.inorderPrint(myTree.getRoot());
-    std::cout << " ---> PASSED" << std::endl;
-    numPassed++;
+    std::cout << "4. TESTING preorderPrint() ";
+    myTree.preorderPrint(myTree.root());
 
-    std::cout << "PASSED " << numPassed << "/" <<numTests << " TESTS" << std::endl;
+    std::cout << "5. TESTING inorderPrint() ";
+    myTree.inorderPrint(myTree.root());
+
+    std::cout << "6. TESTING postorderPrint() ";
+    myTree.postorderPrint(myTree.root());
+
+    std::cout << "PASSED " << numPassed << "/" << numTests << " TESTS" << std::endl;
 
     return 0;
 }

@@ -17,29 +17,25 @@ template <typename T>
 class BinarySearchTree {
     public:
         BinarySearchTree();
-        Node<T>* getRoot();
-        bool insertVal(const T& val);
-        void inorderPrint(Node<T>* nodeptr);
+        Node<T>* root();
+        int size();
         T getMinimum();
         T getMaximum();
+        bool insertVal(const T& val);
+        void preorderPrint(Node<T>* nodeptr);
+        void inorderPrint(Node<T>* nodeptr);
+        void postorderPrint(Node<T>* nodeptr);
     private:
-        int size;
-        Node<T>* root;
+        int size_;
+        Node<T>* root_;
 };
-
 
 // Default constructor
 template <typename T>
 BinarySearchTree<T>::BinarySearchTree() {
-    size = 0;
-    root = nullptr;
-}
-
-// Prints the BST using an inorder traversal.
-template <typename T>
-void BinarySearchTree<T>::inorderPrint(Node<T>* nodeptr) {
     // TO BE COMPLETED
 }
+
 
 // Returns the maximum in the BST
 template <typename T>
@@ -53,14 +49,44 @@ T BinarySearchTree<T>::getMaximum() {
     // TO BE COMPLETED
 }
 
-// Returns a node pointer to the root node
+// Prints the BST using an preorder traversal.
 template <typename T>
-Node<T>* BinarySearchTree<T>::getRoot() {
-    return root;
+void BinarySearchTree<T>::preorderPrint(Node<T>* nodeptr) {
+    // TO BE COMPLETED
+}
+
+// Prints the BST using an inorder traversal.
+template <typename T>
+void BinarySearchTree<T>::inorderPrint(Node<T>* nodeptr) {
+    // TO BE COMPLETED
+}
+
+// Prints the BST using an postorder traversal.
+template <typename T>
+void BinarySearchTree<T>::postorderPrint(Node<T>* nodeptr) {
+    // TO BE COMPLETED
 }
 
 
+/****************************
+ * DO NOT CHANGE CODE BELOW *
+ ****************************/
+// Returns a node pointer to the root_ node
+// DO NOT CHANGE
+template <typename T>
+Node<T>* BinarySearchTree<T>::root() {
+    return root_;
+}
 
+// Returns the number of elements in the BST
+// DO NOT CHANGE
+template <typename T>
+int BinarySearchTree<T>::size() {
+    return size_;
+}
+
+// Insert a value in the BST.
+// DO NOT CHANGE
 template <typename T>
 bool BinarySearchTree<T>::insertVal(const T& val) {
     Node<T>* newNode = new Node<T>;
@@ -68,13 +94,13 @@ bool BinarySearchTree<T>::insertVal(const T& val) {
     newNode->left = nullptr;
     newNode->right = nullptr;
 
-    if (size == 0) {
-        root = newNode;
-        size++;
+    if (size_ == 0) {
+        root_ = newNode;
+        size_++;
         return true;
     }
 
-    Node<T>* tmp = root;
+    Node<T>* tmp = root_;
 
     while (tmp) {
         if (val > tmp->value) {
@@ -83,7 +109,7 @@ bool BinarySearchTree<T>::insertVal(const T& val) {
             }
             else {
                 tmp->right = newNode;
-                size++;
+                size_++;
                 return true;
             }
         }
@@ -93,7 +119,7 @@ bool BinarySearchTree<T>::insertVal(const T& val) {
             }
             else {
                 tmp->left = newNode;
-                size++;
+                size_++;
                 return true;
             }
         }
