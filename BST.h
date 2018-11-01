@@ -36,7 +36,6 @@ BinarySearchTree<T>::BinarySearchTree() {
     // TO BE COMPLETED
 }
 
-
 // Returns the maximum in the BST
 template <typename T>
 T BinarySearchTree<T>::getMinimum() {
